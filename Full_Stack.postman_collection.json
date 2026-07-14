@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "323976a7-1f5c-4cdf-970e-6f9144b144e7",
+    "name": "Full_Stack",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53730903",
+    "_collection_link": "https://go.postman.co/collection/53730903-323976a7-1f5c-4cdf-970e-6f9144b144e7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Rest_Api",
+      "item": [
+        {
+          "name": "POST UPDATE EMPLOYEE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var template = `",
+                  "<style>",
+                  "  body { font-family: Arial, sans-serif; padding: 16px; }",
+                  "  h2 { color: #333; }",
+                  "  table { border-collapse: collapse; width: 100%; max-width: 500px; }",
+                  "  th { background-color: #FF6C37; color: white; padding: 10px 14px; text-align: left; }",
+                  "  td { padding: 10px 14px; border-bottom: 1px solid #ddd; }",
+                  "  tr:hover td { background-color: #f5f5f5; }",
+                  "</style>",
+                  "<h2>Employee Details</h2>",
+                  "<table>",
+                  "  <tr><th>Field</th><th>Value</th></tr>",
+                  "  <tr><td>ID</td><td>{{id}}</td></tr>",
+                  "  <tr><td>Name</td><td>{{name}}</td></tr>",
+                  "  <tr><td>Email</td><td>{{email}}</td></tr>",
+                  "  <tr><td>Department</td><td>{{department}}</td></tr>",
+                  "  <tr><td>Salary</td><td>${{salary}}</td></tr>",
+                  "  <tr><td>Join Date</td><td>{{joinDate}}</td></tr>",
+                  "</table>",
+                  "`;",
+                  "",
+                  "var data = pm.response.json();",
+                  "pm.visualizer.set(template, data);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":225,\r\n\t\"name\":\"Karthi\",\r\n\t\"email\":\"karthi@gmail.com\",\r\n    \"department\":\"CE\",\r\n\t\"salary\":20000.00,\r\n\t\"joinDate\":\"2026-04-05\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9090/api/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET ALL EMPLOYEES",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":225,\r\n\t\"name\":\"Karthi\",\r\n\t\"email\":\"karthi@gmail.com\",\r\n    \"department\":\"CE\",\r\n\t\"salary\":20000.00,\r\n\t\"joinDate\":\"2026-04-05\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9090/api/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT UPDATE EMPLOYEES",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":253,\r\n\t\"name\":\"Shalini\",\r\n\t\"email\":\"shalu@gmail.com\",\r\n    \"department\":\"CE\",\r\n\t\"salary\":20000.00,\r\n\t\"joinDate\":\"2026-04-05\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9090/api/employees/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "employees",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE EMPLOYEES",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/api/employees/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "employees",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET SINGLE EMPLOEE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/api/employees/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "api",
+                "employees",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
